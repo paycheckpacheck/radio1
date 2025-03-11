@@ -1,13 +1,17 @@
 radio.onReceivedString(function (receivedString) {
-    if ("youre infected" == receivedString) {
+    if (true) {
+        if ("im alive" == receivedString) {
+            basic.showIcon(IconNames.Heart)
+        } else {
+            basic.showIcon(IconNames.Ghost)
+        }
+    } else if ("youre infected" == receivedString) {
         radio.setTransmitPower(0.05)
         while (true) {
             basic.showIcon(IconNames.Ghost)
             radio.sendString(receivedString)
             control.waitMicros(1000)
         }
-    } else if ("im alive" == receivedString) {
-        basic.showIcon(IconNames.Heart)
     } else {
     	
     }
